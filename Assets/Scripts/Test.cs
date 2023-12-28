@@ -1,20 +1,25 @@
-﻿using Unity.Netcode;
+using Unity.Netcode;
 using UnityEngine;
 
 namespace Erinn
 {
-    public class Test : MonoBehaviour
+    public sealed class Test : MonoBehaviour
     {
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.Z))
             {
                 NetworkManager.Singleton.StartHost();
             }
 
-            if (Input.GetKeyDown(KeyCode.S))
+            if (Input.GetKeyDown(KeyCode.X))
             {
                 NetworkManager.Singleton.StartClient();
+            }
+
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                NetworkManager.Singleton.StartServer();
             }
         }
     }
