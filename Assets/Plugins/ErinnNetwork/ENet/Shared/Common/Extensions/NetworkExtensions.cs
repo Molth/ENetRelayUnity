@@ -17,6 +17,19 @@ namespace Erinn
         /// </summary>
         /// <param name="netEvent">Event</param>
         /// <returns>端点名称</returns>
-        public static string EndPointString(this Event netEvent) => $"[{netEvent.Peer.IP}:{netEvent.Peer.Port}]";
+        public static string EndPointString(this Event netEvent)
+        {
+            return netEvent.Peer.EndPointString();
+        }
+
+        /// <summary>
+        ///     端点名称
+        /// </summary>
+        /// <param name="peer">Peer</param>
+        /// <returns>端点名称</returns>
+        public static string EndPointString(this Peer peer)
+        {
+            return $"[{peer.IP}:{peer.Port}]";
+        }
     }
 }
